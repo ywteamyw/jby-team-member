@@ -184,15 +184,18 @@ a{color:inherit;text-decoration:none}
   padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .team-track::-webkit-scrollbar{display:none}
 .team-card{position:relative;flex:0 0 325px;aspect-ratio:325/406;border-radius:2px;overflow:hidden;
-  scroll-snap-align:start;background:var(--section)}
-.team-card>img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);will-change:transform}
-.team-card:hover>img{transform:scale(1.06)}
-.team-panel{position:absolute;left:12px;right:12px;bottom:12px;padding:16px;
-  background:rgba(255,255,255,0.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:2px}
-.team-panel .t-office{font-family:'Myriad Pro',sans-serif;font-weight:400;font-size:14px;line-height:20px;color:var(--mute);margin:0 0 6px}
-.team-panel .t-name{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;line-height:22px;letter-spacing:.01em;
-  text-transform:uppercase;color:#000;margin:0 0 4px}
-.team-panel .t-role{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:16px;line-height:22px;color:var(--mute);margin:0}
+  scroll-snap-align:start;background:#e9edf1}
+.team-card .t-photo{position:absolute;inset:0;overflow:hidden}
+.team-card .t-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .7s var(--ease);will-change:transform}
+.team-card:hover .t-photo img{transform:scale(1.06)}
+.t-foot{position:absolute;left:12px;right:12px;bottom:12px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.t-tag{font-family:'Myriad Pro',sans-serif;font-size:14px;line-height:1;letter-spacing:0.06em;text-transform:uppercase;color:#fff;
+  background:rgba(65,100,123,0.94);padding:6px 11px;border-radius:2px}
+.t-label{width:100%;display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:2px;background:rgba(255,255,255,0.9)}
+.t-office{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:16px;line-height:20px;color:var(--navy);margin:0}
+.t-nr{display:flex;flex-direction:column;gap:4px}
+.t-name{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;line-height:22px;letter-spacing:0;text-transform:uppercase;color:#111;margin:0}
+.t-role{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:16px;line-height:21px;color:var(--mute);margin:0}
 .team-arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:2px;
   background:rgba(0,0,0,0.72);color:#fff;display:flex;align-items:center;justify-content:center;z-index:5;
   transition:background .3s ease,opacity .3s ease;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
@@ -239,8 +242,8 @@ footer{background:var(--paper);padding:40px 40px;color:var(--mute);font-size:14p
 .reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}.reveal.d4{transition-delay:.28s}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
-  .zoom img,.team-card>img,.vessel-mark{transition:none}
-  .zoom:hover img,.team-card:hover>img{transform:none}
+  .zoom img,.team-card .t-photo img,.vessel-mark{transition:none}
+  .zoom:hover img,.team-card:hover .t-photo img{transform:none}
 }
 .foot-locs{display:flex;flex-direction:column;gap:14px;margin:0}
 .foot-locs a{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;line-height:20px;letter-spacing:0;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s}
@@ -359,24 +362,24 @@ footer{background:var(--paper);padding:40px 40px;color:var(--mute);font-size:14p
   <div class="team-wrap reveal">
     <div class="team-track" id="team-track">
       <article class="team-card">
-        <img src="./assets/team_jeff.jpg" alt="Jeff Brown"/>
-        <div class="team-panel"><p class="t-office">San Diego Office</p><p class="t-name">Jeff Brown</p><p class="t-role">Owner</p></div>
+        <div class="t-photo"><img src="./assets/team_jeff.jpg" alt="Jeff Brown"/></div>
+        <div class="t-foot"><span class="t-tag">Management</span><div class="t-label"><span class="t-office">San Diego Office</span><div class="t-nr"><span class="t-name">Jeff Brown</span><span class="t-role">Owner</span></div></div></div>
       </article>
       <article class="team-card">
-        <img src="./assets/team_melina.jpg" alt="Melina Monninger"/>
-        <div class="team-panel"><p class="t-office">San Diego Office</p><p class="t-name">Melina Monninger</p><p class="t-role">Marketing Manager</p></div>
+        <div class="t-photo"><img src="./assets/team_melina.jpg" alt="Melina Monninger"/></div>
+        <div class="t-foot"><span class="t-tag">Management</span><div class="t-label"><span class="t-office">San Diego Office</span><div class="t-nr"><span class="t-name">Melina Monninger</span><span class="t-role">Marketing Manager</span></div></div></div>
       </article>
       <article class="team-card">
-        <img src="./assets/team_allen.jpg" alt="Allen Jones"/>
-        <div class="team-panel"><p class="t-office">Newport Harbor Office</p><p class="t-name">Allen Jones</p><p class="t-role">Sales Professional &amp; Mari-Time Manager</p></div>
+        <div class="t-photo"><img src="./assets/team_allen.jpg" alt="Allen Jones"/></div>
+        <div class="t-foot"><span class="t-tag">Sales</span><div class="t-label"><span class="t-office">Newport Harbor Office</span><div class="t-nr"><span class="t-name">Allen Jones</span><span class="t-role">Sales Professional &amp; Mari~Time Manager</span></div></div></div>
       </article>
       <article class="team-card">
-        <img src="./assets/team_adam.jpg" alt="Adam Aronson"/>
-        <div class="team-panel"><p class="t-office">San Diego Office</p><p class="t-name">Adam Aronson</p><p class="t-role">Accounting Manager</p></div>
+        <div class="t-photo"><img src="./assets/team_adam.jpg" alt="Adam Aronson"/></div>
+        <div class="t-foot"><span class="t-tag">Management</span><div class="t-label"><span class="t-office">San Diego Office</span><div class="t-nr"><span class="t-name">Adam Aronson</span><span class="t-role">Accounting Manager</span></div></div></div>
       </article>
       <article class="team-card">
-        <img src="./assets/team_kyle.png" alt="Kyle Harmon"/>
-        <div class="team-panel"><p class="t-office">Newport Harbor Office</p><p class="t-name">Kyle Harmon</p><p class="t-role">Sales Professional</p></div>
+        <div class="t-photo"><img src="./assets/team_kyle.png" alt="Kyle Harmon"/></div>
+        <div class="t-foot"><span class="t-tag">Sales</span><div class="t-label"><span class="t-office">Newport Harbor Office</span><div class="t-nr"><span class="t-name">Kyle Harmon</span><span class="t-role">Sales Professional</span></div></div></div>
       </article>
     </div>
     <button class="team-arr prev" id="team-prev" aria-label="Previous team members" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m15 18-6-6 6-6"/></svg></button>
