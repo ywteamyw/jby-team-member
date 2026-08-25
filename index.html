@@ -249,6 +249,22 @@ footer{position:relative;background:var(--paper);padding:40px 40px;color:var(--m
 .foot-locs{display:flex;flex-direction:column;gap:14px;margin:0}
 .foot-locs a{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;line-height:20px;letter-spacing:0;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s}
 .foot-locs a:hover{color:var(--navy)}
+
+/* ====== MOBILE POLISH (phones only) ====== */
+@media (max-width:600px){
+  /* The vessels block rendered as an empty white band on phones: the row is a grid
+     inside a column flex container, and "margin:0 auto" cancels the flex stretch,
+     so the row collapsed to zero width. An explicit width brings the cards back. */
+  .vessel-row{width:100%;max-width:360px;margin-left:auto;margin-right:auto}
+
+  /* page title one step down so it does not dominate the screen */
+  .tm-hero h1,.member-hero h1,h1{font-size:28px;line-height:38px}
+
+  /* "info@jeffbrownyachts.com" is one unbreakable token in uppercase Mesmerize */
+  .foot-col p{font-size:14px;line-height:18px}
+  .foot-col p a{font-size:inherit}
+}
+
 </style>
 </head>
 <body>
